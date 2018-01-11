@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<core:IFMLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.omg.org/spec/20130218/core" xmlns:ext="http://www.omg.org/spec/20130218/ext">
+  <interactionFlowModel>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="Screen" isDefault="true"/>
+  </interactionFlowModel>
+  <domainModel/>
+</core:IFMLModel>
