@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
-<core:IFMLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.omg.org/spec/20130218/core" xmlns:ext="http://www.omg.org/spec/20130218/ext">
+<core:IFMLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.omg.org/spec/20130218/core" xmlns:ext="http://www.omg.org/spec/20130218/ext" name="LeeGoMainScreen">
   <interactionFlowModel>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="Screen" isDefault="true"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="LeeGoMainScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0" isDefault="true">
+      <viewElements xsi:type="ext:IFMLToolBar" name="ToolBar" isLandmark="true">
+        <viewElements xsi:type="ext:Button" id="(0.05 0.1)" name="MenuButton" text="" index="">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
+          </viewElementEvents>
+        </viewElements>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/action_sort" name="RefreshButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
+          </viewElementEvents>
+        </viewElements>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/action_search" name="SearchButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
+          </viewElementEvents>
+        </viewElements>
+      </viewElements>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
