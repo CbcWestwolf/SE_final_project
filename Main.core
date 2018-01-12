@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <core:IFMLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.omg.org/spec/20130218/core" xmlns:ext="http://www.omg.org/spec/20130218/ext" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="LeeGoMainScreen">
   <interactionFlowModel>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="LeeGoMainScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.1/@viewElementEvents.0/@outInteractionFlows.0" isDefault="true">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="LeeGoMainScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0" isDefault="true">
       <viewElements xsi:type="ext:IFMLToolBar" name="ToolBar" isLandmark="true">
         <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/action_sort" name="SortButton">
           <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
@@ -26,9 +26,6 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.1">
-      <viewElementEvents xsi:type="ext:SwipeEvent" name="left swipe(0.98-0.02)">
-        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
-      </viewElementEvents>
       <viewElements xsi:type="ext:IFMLToolBar" name="ToolBar" isLandmark="true">
         <viewElements xsi:type="ext:Button" id="(0.05 0.1)" name="CancelButton">
           <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
@@ -46,30 +43,35 @@
           </viewElementEvents>
         </viewElements>
       </viewElements>
-      <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/user_layout" name="WelcomeButton">
-        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.14"/>
+      <viewElements xsi:type="ext:Scroller" name="Scroller" isLandmark="true">
+        <viewElementEvents xsi:type="ext:ScrollEvent" name="left swipe(0.98-0.02)">
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
         </viewElementEvents>
-      </viewElements>
-      <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/settings" name="SettingsButton" index="">
-        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.15"/>
-        </viewElementEvents>
-      </viewElements>
-      <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/help" name="HelpButton">
-        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.16"/>
-        </viewElementEvents>
-      </viewElements>
-      <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/feedback" name="FeedbackButton">
-        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.17"/>
-        </viewElementEvents>
-      </viewElements>
-      <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/about" name="AboutButton">
-        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.18"/>
-        </viewElementEvents>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/user_layout" name="WelcomeButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.14"/>
+          </viewElementEvents>
+        </viewElements>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/settings" name="SettingsButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.15"/>
+          </viewElementEvents>
+        </viewElements>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/help" name="HelpButton" text="">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.16"/>
+          </viewElementEvents>
+        </viewElements>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/feedback" name="FeedbackButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.17"/>
+          </viewElementEvents>
+        </viewElements>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/about" name="AboutButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.18"/>
+          </viewElementEvents>
+        </viewElements>
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.6/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.8/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.12/@actionEvents.0/@outInteractionFlows.0">
@@ -130,11 +132,11 @@
       </actionEvents>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromMenuDrawer" body="isFromMainScreen = false;"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="WelcomeScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SettingScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="HelpScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.3/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="FeedbackScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.4/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="AboutScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.5/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="WelcomeScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SettingScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="HelpScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="FeedbackScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.3/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="AboutScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.4/@viewElementEvents.0/@outInteractionFlows.0"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
