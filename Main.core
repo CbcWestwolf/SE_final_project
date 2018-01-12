@@ -15,7 +15,7 @@
         </viewElements>
         <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/action_search" name="SearchButton">
           <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.10"/>
           </viewElementEvents>
         </viewElements>
       </viewElements>
@@ -26,11 +26,11 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.6/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.8/@actionEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.6/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.8/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@actionEvents.0/@outInteractionFlows.0">
       <parameters name="SearchString" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
         <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
       </parameters>
-      <parameters name="isEraseValid" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.4">
+      <parameters id="" name="isFromMainScreen" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.4">
         <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_pmeW4KhoEeWnMuPrkY-TMg"/>
       </parameters>
       <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/cancel" name="CancelButton">
@@ -70,6 +70,12 @@
       </actionEvents>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="EraseTheString" body="SearchString = &quot;&quot;;"/>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="setFronMainScreenAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.11">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromMainScreen" body="isFromMainScreen = true;"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
