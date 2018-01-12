@@ -26,9 +26,12 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.3/@actionEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.3/@actionEvents.0/@outInteractionFlows.0">
       <parameters id="" name="mode" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.4">
         <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+      </parameters>
+      <parameters id="" name="isEraseValid" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.6">
+        <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_pmeW4KhoEeWnMuPrkY-TMg"/>
       </parameters>
       <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/cancel" name="CancelButton">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
@@ -40,11 +43,16 @@
           <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.3"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="ext:SimpleField" name="Input">
-          <subViewComponentParts xsi:type="ext:IFMLSlot" name="Slot">
+          <subViewComponentParts xsi:type="ext:IFMLSlot" name="This is the input string.">
             <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
           </subViewComponentParts>
           <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
         </viewComponentParts>
+      </viewElements>
+      <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/erase" name="EraseButton">
+        <viewElementEvents xsi:type="ext:TouchEvent" id="" name="Touch Event" activationExpression="//@interactionFlowModel/@interactionFlowModelElements.7">
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
+        </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="core:IFMLAction" id="" name="Action" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.5">
@@ -53,7 +61,9 @@
       </actionEvents>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:DefaultExpression" id="DefaultExpression" language="" body="return &quot;&quot;;"/>
-    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="CompleteInput" body="mode = &quot;complete&quot;;"/>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="CompleteInput" body="mode = &quot;complete&quot;; if( mode == &quot;&quot;) {isEraseValid = false;} else { isEraseValid = true;)"/>
+    <interactionFlowModelElements xsi:type="ext:DefaultExpression" id="DefaultValidation" body="return false;"/>
+    <interactionFlowModelElements xsi:type="core:ActivationExpression" id="CheckEraseValid" body="if(isEraseValid) {return true;} else {return false;}"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
