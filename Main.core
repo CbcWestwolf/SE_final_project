@@ -26,7 +26,7 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.6/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.8/@actionEvents.0/@outInteractionFlows.0">
       <parameters name="SearchString" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
         <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
       </parameters>
@@ -38,9 +38,38 @@
           <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
         </viewElementEvents>
       </viewElements>
+      <viewElements xsi:type="ext:Form" name="Form">
+        <viewElementEvents xsi:type="ext:OnInputEvent" name="OnInput Event">
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.6"/>
+        </viewElementEvents>
+        <viewComponentParts xsi:type="ext:SimpleField" name="inputString" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
+          <subViewComponentParts xsi:type="ext:IFMLSlot" name="This is the input string.">
+            <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+          </subViewComponentParts>
+          <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+        </viewComponentParts>
+      </viewElements>
+      <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/erase" name="EraseButton" text="">
+        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event" activationExpression="//@interactionFlowModel/@interactionFlowModelElements.7">
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.8"/>
+        </viewElementEvents>
+      </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:DefaultExpression" id="DefaultEmptyString" body="return &quot;&quot;;"/>
     <interactionFlowModelElements xsi:type="ext:DefaultExpression" id="DefaultFalseBollean" body="return false;"/>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="CopyTheString" body="SearchString = &quot;Not Null&quot;;"/>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="CopyAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.5">
+      <actionEvents id="" name="">
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:ActivationExpression" id="checkInputString" body="if( SearchString.equals(&quot;&quot;) ){return false; } else { return true;}"/>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" id="" name="EraseAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.9">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="EraseTheString" body="SearchString = &quot;&quot;;"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
