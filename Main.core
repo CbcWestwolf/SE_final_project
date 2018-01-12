@@ -8,6 +8,16 @@
             <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
           </viewElementEvents>
         </viewElements>
+        <viewElements xsi:type="ext:Button" id="(0.05 0.1)" name="MenuButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
+          </viewElementEvents>
+        </viewElements>
+        <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/action_search" name="SearchButton">
+          <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
+          </viewElementEvents>
+        </viewElements>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/reload" name="ReloadButton">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
@@ -15,6 +25,8 @@
         </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
