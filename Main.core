@@ -25,7 +25,7 @@
         </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Drawer" name="MenuDrawer" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.0/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.1">
       <viewElements xsi:type="ext:IFMLToolBar" name="ToolBar" isLandmark="true">
         <viewElements xsi:type="ext:Button" id="(0.05 0.1)" name="CancelButton">
           <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
@@ -53,7 +53,9 @@
       </parameters>
       <viewElements xsi:type="ext:Button" id="com.nightonke.leetcoder:id/cancel" name="CancelButton">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" id="true" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" id="false" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
+          <interactionFlowExpression body="return isFromMainScreen;"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Form" name="Form">
