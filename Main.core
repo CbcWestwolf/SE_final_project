@@ -150,7 +150,16 @@
     <interactionFlowModelElements xsi:type="ext:Screen" name="HelpScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0"/>
     <interactionFlowModelElements xsi:type="ext:Screen" name="FeedbackScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.3/@viewElementEvents.0/@outInteractionFlows.0"/>
     <interactionFlowModelElements xsi:type="ext:Screen" name="AboutScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.1/@viewElements.4/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="RegisterScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.14/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.19/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="RegisterScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.14/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.23/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.25/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.26/@actionEvents.0/@outInteractionFlows.0">
+      <parameters name="UserName" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
+        <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+      </parameters>
+      <parameters name="FirstPW" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
+        <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+      </parameters>
+      <parameters name="SecondPW" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
+        <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+      </parameters>
       <viewElements xsi:type="ext:Text" id="com.nightonke.leetcoder:id/buttonDefaultNegative" name="Cancel">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
           <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
@@ -158,8 +167,30 @@
       </viewElements>
       <viewElements xsi:type="ext:Text" id="com.nightonke.leetcoder:id/buttonDefaultPositive" name="Register">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.19"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" id="true" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.25"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" id="false" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.26"/>
+          <interactionFlowExpression id="" body="if( FirstPW.equals(SecondPW) ) { return true; } else { return false ; }"/>
         </viewElementEvents>
+      </viewElements>
+      <viewElements xsi:type="ext:Form" id="" name="Form" index="">
+        <viewElementEvents xsi:type="ext:OnInputEvent" name="OnInput Event">
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.23"/>
+        </viewElementEvents>
+        <viewComponentParts xsi:type="ext:SimpleField" id="com.nightonke.leetcoder:id/password" name="FirstPWField" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
+          <subViewComponentParts xsi:type="ext:IFMLSlot" name="RightPW">
+            <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+          </subViewComponentParts>
+          <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+        </viewComponentParts>
+        <viewComponentParts xsi:type="ext:SimpleField" id="com.nightonke.leetcoder:id/password_again" name="SecondPWField" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.3">
+          <subViewComponentParts xsi:type="ext:IFMLSlot" id="" name="RightPW">
+            <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+          </subViewComponentParts>
+          <subViewComponentParts xsi:type="ext:IFMLSlot" name="WrongPW">
+            <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+          </subViewComponentParts>
+          <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+        </viewComponentParts>
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Screen" name="LoginScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.14/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.20/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0">
@@ -202,6 +233,22 @@
           <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
         </viewElementEvents>
       </viewElements>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="CopyUserAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.19/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.24">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.19"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="CopyUser" body="FirstPW = FirstPWField ; SecondPW = SecondPWField;"/>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="RegisterSuccessAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.19/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.19"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="RegisterFailAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.19/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.1">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.19"/>
+      </actionEvents>
     </interactionFlowModelElements>
   </interactionFlowModel>
   <domainModel/>
