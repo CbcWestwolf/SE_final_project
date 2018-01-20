@@ -151,6 +151,9 @@
       </actionEvents>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.18/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.19/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.20/@actionEvents.0/@outInteractionFlows.0">
+      <parameters name="isFromSearchScreen" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.12">
+        <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_pmeW4KhoEeWnMuPrkY-TMg"/>
+      </parameters>
       <viewElements xsi:type="ext:Button" id="(0.05 0.05)" name="BackButton">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
           <outInteractionFlows xsi:type="core:NavigationFlow" id="1" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
@@ -175,6 +178,7 @@
         <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.17"/>
       </actionEvents>
     </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:DefaultExpression" id="DefaultEmptyString" body="return &quot;&quot;;"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
