@@ -150,9 +150,12 @@
         <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.11"/>
       </actionEvents>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.18/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.19/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.20/@actionEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.18/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.19/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.20/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.22/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.25/@actionEvents.0/@outInteractionFlows.0">
       <parameters name="isFromSearchScreen" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.12">
         <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_pmeW4KhoEeWnMuPrkY-TMg"/>
+      </parameters>
+      <parameters id="SearchString" name="SearchString" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.21">
+        <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
       </parameters>
       <viewElements xsi:type="ext:Button" id="(0.05 0.05)" name="BackButton">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
@@ -160,6 +163,22 @@
           <outInteractionFlows xsi:type="core:NavigationFlow" id="2" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="3" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
           <interactionFlowExpression body="if(isFromMenu) {return 1;} else if( isFromSNotesScreen) {return 2; } else {return 3;}"/>
+        </viewElementEvents>
+      </viewElements>
+      <viewElements xsi:type="ext:Form" name="Form">
+        <viewElementEvents xsi:type="ext:OnInputEvent" name="OnInput Event">
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.22"/>
+        </viewElementEvents>
+        <viewComponentParts xsi:type="ext:SimpleField" id="com.lguipeng.notes:id/search_src_text" name="searchStringField" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.21">
+          <subViewComponentParts xsi:type="ext:IFMLSlot" id="SearchContent" name="SearchContent" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.21">
+            <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+          </subViewComponentParts>
+          <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+        </viewComponentParts>
+      </viewElements>
+      <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/search_close_btn" name="EraseButton">
+        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event" activationExpression="//@interactionFlowModel/@interactionFlowModelElements.24">
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.25"/>
         </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
@@ -179,6 +198,19 @@
       </actionEvents>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:DefaultExpression" id="DefaultEmptyString" body="return &quot;&quot;;"/>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="CompleteSearchStringAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.17/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.23">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.17"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="CompleteSearchString" body="SearchString = searchStringField;"/>
+    <interactionFlowModelElements xsi:type="core:ActivationExpression" id="CheckEraseValid" body="if( SearchString.equals(&quot;&quot;) ) {return false;}  else {return true;}"/>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="EraseSearchStringAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.17/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.26">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.17"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="EraseSearchString" body="SearchString = &quot;&quot;;"/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
