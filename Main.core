@@ -69,7 +69,7 @@
             <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.18"/>
           </viewElementEvents>
         </viewElements>
-        <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/action_more" name="MoreButton">
+        <viewElements xsi:type="ext:Button" id="(0.95 0.05)" name="MoreButton">
           <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
             <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.15"/>
           </viewElementEvents>
