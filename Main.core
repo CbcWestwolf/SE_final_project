@@ -106,8 +106,8 @@
         <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
       </actionEvents>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromSNotesScreen" language="" body="isFromSNotesScreen = true; isFromMenu = false;"/>
-    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromTrashScreen" body="isFromSNotesScreen  = false; isFromMenu = false;"/>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromSNotesScreen" language="" body="isFromSNotesScreen = true; isFromMenu = false;  isFromSearchScreen = false;"/>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromTrashScreen" body="isFromSNotesScreen  = false; isFromMenu = false; isFromSearchScreen = false;"/>
     <interactionFlowModelElements xsi:type="core:IFMLAction" name="setFromTrashScreenAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.6">
       <actionEvents>
         <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
@@ -138,7 +138,7 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:Screen" name="OuterScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.8/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.8/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.8/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SettingsScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.11/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.4/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.8/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.52/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.56/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.55/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SettingsScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.11/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.4/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.8/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.52/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.54/@actionEvents.0/@outInteractionFlows.0">
       <viewElements xsi:type="ext:Button" id="(0.05 0.05)" name="BackButton">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
           <outInteractionFlows xsi:type="core:NavigationFlow" id="true" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
@@ -178,7 +178,7 @@
       </viewElements>
       <viewElements xsi:type="ext:Text" id="" name="Advice Feedback" text="Advice Feedback">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.51"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Text" id="" name="Give favor" text="Give favor">
@@ -188,11 +188,11 @@
       </viewElements>
       <viewElements xsi:type="ext:Text" id="" name="Pay For Me" text="Pay For Me">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.55"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.52"/>
         </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="ext:MenuList" name="MoreList" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.15/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.16/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.57/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:MenuList" name="MoreList" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.15/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.16/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.56/@actionEvents.0/@outInteractionFlows.0">
       <viewElements xsi:type="ext:MenuItem" name="SettingItem" text="Setting">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
           <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.10"/>
@@ -203,7 +203,8 @@
           <outInteractionFlows xsi:type="core:NavigationFlow" id="1" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="2" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="3" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
-          <interactionFlowExpression body="if(isFromMenu) {return 1;} else if( isFromSNotesScreen) {return 2; } else {return 3;}"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" id="4" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.17"/>
+          <interactionFlowExpression body="if(isFromMenu) {return 1;} else if( isFromSearchScreen ) {return 4;}  else if( isFromSNotesScreen) {return 2; } else {return 3;}"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:MenuItem" id="" name="AboutItem" text="About">
@@ -213,8 +214,8 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:DefaultExpression" id="DefaultBooleanFalse" body="return false;"/>
-    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromMenu" body="isFromMenu = true;"/>
-    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setNotFromMenu" body="isFromMenu = false;"/>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromMenu" body="isFromMenu = true; isFromSearchScreen = false;"/>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setNotFromMenu" body="isFromMenu = false; isFromSearchScreen = false;"/>
     <interactionFlowModelElements xsi:type="core:IFMLAction" name="setFromMenuAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.2/@viewElements.2/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.13">
       <actionEvents>
         <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.11"/>
@@ -225,7 +226,7 @@
         <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.11"/>
       </actionEvents>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.18/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.19/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.20/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.22/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.25/@actionEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="SearchScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.18/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.19/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.20/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.22/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.25/@actionEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.11/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.3">
       <parameters name="isFromSearchScreen" defaultValue="//@interactionFlowModel/@interactionFlowModelElements.12">
         <type xsi:type="uml:PrimitiveType" href="mainUML.uml#_pmeW4KhoEeWnMuPrkY-TMg"/>
       </parameters>
@@ -246,7 +247,7 @@
       <viewElements xsi:type="ext:IFMLToolBar" name="ToolBar" isLandmark="true">
         <viewElements xsi:type="ext:Button" id="(0.95 0.05)" name="MoreButton" text="">
           <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.57"/>
+            <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.55"/>
           </viewElementEvents>
         </viewElements>
         <viewElements xsi:type="ext:Button" id="(0.05 0.05)" name="BackButton">
@@ -450,8 +451,8 @@
         </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="BindEvernoteScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.3/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SetPasswordScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.5/@viewElementEvents.0/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="ext:Screen" name="BindEvernoteScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.3/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.7/@viewElementEvents.0/@outInteractionFlows.0"/>
+    <interactionFlowModelElements xsi:type="ext:Screen" name="Screen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.5/@viewElementEvents.0/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.9/@viewElementEvents.0/@outInteractionFlows.0">
       <viewElements xsi:type="ext:Button" id="(0.05 0.05)" name="BackButton">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
           <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.10"/>
@@ -461,50 +462,42 @@
     <interactionFlowModelElements xsi:type="ext:Screen" name="ChangeThemeScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.6/@viewElementEvents.0/@outInteractionFlows.0">
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Red" index="0">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Brown" index="1">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Blue" index="2">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Qing" index="3">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Yellow" index="4">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Purple" index="5">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Pink" text="" index="6">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
       <viewElements xsi:type="ext:Button" id="com.lguipeng.notes:id/img_1" name="Green" index="7">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
-        </viewElementEvents>
-      </viewElements>
-    </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="AdviceScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.7/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="ext:Screen" name="SponsorScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.10/@viewElements.9/@viewElementEvents.0/@outInteractionFlows.0">
-      <viewElements xsi:type="ext:Button" id="(0.05 0.05)" name="BackButton">
-        <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.10"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.54"/>
         </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
@@ -516,10 +509,16 @@
     <interactionFlowModelElements xsi:type="ext:Screen" name="MoreScreen" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.17/@viewElements.1/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0">
       <viewElements xsi:type="ext:Text" name="More" text="More">
         <viewElementEvents xsi:type="ext:TouchEvent" name="Touch Event">
-          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.11"/>
+          <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.56"/>
         </viewElementEvents>
       </viewElements>
     </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" name="setFromSearchScreenAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.55/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0" javaExpression="//@interactionFlowModel/@interactionFlowModelElements.57">
+      <actionEvents>
+        <outInteractionFlows xsi:type="core:NavigationFlow" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.11"/>
+      </actionEvents>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="ext:ExecutionExpression" id="setFromSearchScreen" body="isFromSearchScreen = true; "/>
   </interactionFlowModel>
   <domainModel/>
 </core:IFMLModel>
